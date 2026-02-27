@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haruy Sushi</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+  </style>
+
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend:
+        {
+          fontFamily: {
+            barlow: ['Barlow', 'sans-serif'],
+          },
+          colors:
+          {
+            primary: '#ca3c3f',
+            dark: '#222222',
+            muted: '#999999',
+            footer: '#333333',
+          }
+        }
+      }
+    }
+  </script>
+
+
+</head>
+
+<body class="bg-gray-100">
+
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center">
+
+        <div class="flex items-center space-x-3">
+          <img src="./img/Captura_de_tela_2026-02-27_110528-removebg-preview.png" class="w-29" alt="Logo Haruy Sushi">
+        </div>
+
+
+        <div class="md:hidden flex items-center">
+          <button id="btn-mobile">
+
+            <svg class="w-6 h-6 text-gray-700 hover:text-red-600" fill="none" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hidden md:hidden bg-white" id="menu-mobile">
+      <ul>
+        <li>
+          <a href="#cardapio" class="block text-sm px-4 py-4 hover:bg-red-500 hover:text-white transition duration-300">
+            Cardápio
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+
+  <section class="bg-white py-16">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
+
+      <div class="md:w-1/2 text-center md:text-left">
+        <p class="text-2xl font-semibold text-gray-800 mb-4">
+        A felicidade está a algumas fatias de distância!
+        </p>
+        <a href="#cardapio" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition">
+          Ver Cardápio
+        </a>
+      </div>
+
+      <div class="md:w-1/2 mt-8 md:mt-0">
+        <img src="./img/download.jpg" alt="Prato japonês" class="rounded-lg shadow-md border-5">
+      </div>
+
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-100" id="cardapio">
+    <div class="max-w-4xl mx-auto px-4">
+
+      <h1 class="text-3xl font-bold text-center mb-10 text-red-700">Cardápio</h1>
+
+      <!-- Menu Categoria Inicío -->
+      <nav id="nav-categorias" class="overflow-x-auto whitespece-nowrap 
+      snap-x flex gap-2 mt-6 pb-1">
+
+        <button data-cat="sushis" class="snap-start px-4 py-1 rounded-full 
+        bg-primary text-white font-bold text-sm transition-transform 
+        duration-150 cursor-pointer flex-shrink-0 btn-cat">
+          Pizzas
+        </button>
+
+        <button data-cat="bebidas" class="snap-start px-4 py-1 rounded-full 
+        bg-primary text-white font-bold text-sm transition-transform 
+        duration-150 cursor-pointer flex-shrink-0 btn-cat">
+          Bebidas
+        </button>
+
+        <button data-cat="sobremesas" class="snap-start px-4 py-1 rounded-full 
+        bg-primary text-white font-bold text-sm transition-transform 
+        duration-150 cursor-pointer flex-shrink-0 btn-cat">
+          Sobremesas
+        </button>
+
+      </nav>
+      <!-- Menu Categoria Fim -->
+
+
+      <!-- Categoria: Sushi -->
+      <div id="cat-sushis" class="categoria-conteudo">
+
+        <h2 class="text-xl font-semibold mb-4">Pizzas</h2>
+
+        <div class="bg-white p-6 rounded-lg shadow mb-6">
+          <div class="flex justify-between">
+            <h3 class="font-bold">As mais Pedidas</h3>
+            <span class="text-red-600 font-semibold">R$ 65,00</span>
+          </div>
+          <p class="text-gray-600 mt-2">
+            Calabresa, Mussarela, Portuguesa🦅, Frango com Catupiry, Marguerita
+        </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow mb-6">
+          <div class="flex justify-between">
+            <h3 class="font-bold">Bordas Recheadas</h3>
+            <span class="text-red-600 font-semibold">R$ 10,00</span>
+          </div>
+          <p class="text-gray-600 mt-2">
+            Chocolate, Queijo, Requeijão, Cheddar   
+        </p>
+        </div>
+      </div>
+
+      <!-- Categoria: Temakis -->
+      <div id="cat-temakis" class="categoria-conteudo">
+
+        <h2 class="text-xl font-semibold mb-4"></h2>
+
+        <div class="bg-white p-6 rounded-lg shadow mb-6">
+          <div class="flex justify-between">
+            <h3 class="font-bold">Pizzas Doces</h3>
+            <span class="text-red-600 font-semibold">R$ 70,00</span>
+          </div>
+          <p class="text-gray-600 mt-2">
+            Chocolate com Morango, Brigadeiro, Romeu e Julieta, Banana com Nutella/Canela, Doce de Leite, Prestígio
+        </p>
+        </div>
+      </div>
+
+      <!-- Categoria: Bebidas -->
+      <div id="cat-bebidas" class="categoria-conteudo hidden">
+        <h2 class="text-xl font-semibold mt-10 mb-4">Bebidas</h2>
+
+        <div class="bg-white p-6 rounded-lg shadow mb-6">
+          <div class="flex justify-between">
+            <h3 class="font-bold">Refrigerante</h3>
+            <span class="text-red-600 font-semibold">R$ 8,00</span>
+          </div>
+          <p class="text-gray-600 mt-2">
+            Lata 350ml (Coca-Cola, Guaraná, Sprite)
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow mb-6">
+          <div class="flex justify-between">
+            <h3 class="font-bold">Água Mineral</h3>
+            <span class="text-red-600 font-semibold">R$ 4,00</span>
+          </div>
+          <p class="text-gray-600 mt-2">
+            Garrafa 500ml (com ou sem gás)
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow mb-6">
+          <div class="flex justify-between">
+            <h3 class="font-bold">Cerveja Heineken</h3>
+            <span class="text-red-600 font-semibold">R$ 14,00</span>
+          </div>
+          <p class="text-gray-600 mt-2">
+            Long Check 330ml
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow mb-6">
+          <div class="flex justify-between">
+            <h3 class="font-bold">Suco Natural</h3>
+            <span class="text-red-600 font-semibold">R$ 12,00</span>
+          </div>
+          <p class="text-gray-600 mt-2">
+            Laranja, Maracujá ou Limão (300ml)
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow mb-6">
+          <div class="flex justify-between">
+            <h3 class="font-bold">Chopp</h3>
+            <span class="text-red-600 font-semibold">R$ 27,00</span>
+          </div>
+          <p class="text-gray-600 mt-2">
+          Uma cerveja fresca, não pasteurizada </p>
+        </div>
+
+      </div>
+    
+
+
+
+    <!-- Categoria: Sobremesas -->
+    <div id="cat-sobremesas" class="categoria-conteudo">
+
+      <h2 class="text-xl font-semibold mt-10 mb-4">Sobremesas</h2>
+
+      <div class="bg-white p-6 rounded-lg shadow mb-6">
+        <div class="flex justify-between">
+          <h3 class="font-bold">Sorvete</h3>
+          <span class="text-red-600 font-semibold">R$ 7,00</span>
+        </div>
+        <p class="text-gray-600 mt-2">
+        Massa de Sorvete (Limão, Chocolate, Creme, Napolitano)
+            </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow mb-6">
+        <div class="flex justify-between">
+          <h3 class="font-bold">Petit gâteau</h3>
+          <span class="text-red-600 font-semibold">R$ 15,00</span>
+        </div>
+        <p class="text-gray-600 mt-2">
+        Um bolinho de chocolate assado com uma casquinha        </p>
+      </div>
+
+  </section>
+
+  <footer class="mt-[100px] text-center p-[50px] text-sm text-white bg-footer">
+    <h3 class="font-bold text-lg">Mamma Mia Pizza</h3>
+    <p class="my-[3px]">Rua Prof. Toledo, 500 Centro - Sorocaba</p>
+    <p class="my-[3px]">WhatsApp: (15) 98766-4321</p>
+    <p class="my-[3px]">Aberto todos os dias, das 14h às 23h</p>
+  </footer>
+
+  <!-- Botão Flutuante WatsApp -->
+  <a href="https://wa.me/5515987664321" target="_blank" class="fixed  right-6 buttom-5">
+    <img src="./img/whatsapp.png" alt="link do whatsapp" class="h-[60px]">
+  </a>
+
+  <script>
+    const btn = document.getElementById('btn-mobile');
+    const menu = document.getElementById('menu-mobile');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+
+  <!-- Script Para Botão Categoria -->
+  <script>
+    const botoes = document.querySelectorAll('.btn-cat');
+    const conteudos = document.querySelectorAll('.categoria-conteudo');
+
+    function mudarCategoria(cat) {
+  conteudos.forEach(div => {
+    div.id === 'cat-' + cat
+      ? div.classList.remove('hidden')
+      : div.classList.add('hidden');
+  });
+
+  botoes.forEach(btn => {
+    if (btn.dataset.cat === cat) {
+      btn.classList.add('bg-primary', 'text-white');
+      btn.classList.remove('bg-[#ebebeb]', 'text-dark');
+    } else {
+      btn.classList.remove('bg-primary', 'text-white');
+      btn.classList.add('bg-[#ebebeb]', 'text-dark');
+    }
+  });
+}
+
+
+
+    // // Adiciona Eventos a Cada Botão
+    // botoes.forEach(btn => {
+    //   btn.addEventListener('touchstart', () => {
+    //     btn.classList.add('scale-95');
+    //     mudarCategoria(btn.dataset.cat);
+    //   });
+    //   btn.addEventListener('touchend', () => {
+    //     btn.classList.remove('scale-95');
+    //   });
+    //   btn.addEventListener('click', () => {
+    //     mudarCategoria(btn.dataset.cat);
+    //   });
+    // });
+
+
+
+
+    // Ativar scroll suave para links internos
+    let startX = 0;
+    let startY = 0;
+    
+    // Evento de cada botão
+    botoes.forEach(btn => {
+      // touchstart é disparado assim que o dedo toca a tela
+      btn.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+      // Aplica class tailwild para efeito de clique
+      btn.classList.add('scale-95', 'opacity-80')
+      });
+      // Touched quando tira o dedo da tela
+      btn.addEventListener('touchend', (e) => {
+        // Remove efeito visual
+        btn.classList.remove('scale-95', 'opacity-80')
+        // Ultima posição do dedo antes de levantar
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+        // Calcula distância percorrida pelo dedo em pixels
+        const deltaX = Math.abs (endX - startX);
+        const deltaY = Math.abs(endY - startY);
+        // Lógica matemática se move menos de 10px = clique intensional 
+        if (deltaX < 10 && deltaY < 10) {
+          mudarCategoria(btn.dataset.cat);
+        }
+      });
+      // Touchcancel se o celular aparecer uma ligação ou notificação popup
+      btn.addEventListener('touchcancel', () => {
+        btn.classList.remove('scale-95', 'opacity-80');
+      });
+      // Click para usuários desktop
+      btn.addEventListener('click', () => {
+        mudarCategoria(btn.dataset.cat);
+      });
+    });
+
+
+  </script>
+
+
+</body>
+
+</html>
